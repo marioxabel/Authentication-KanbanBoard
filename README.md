@@ -3,7 +3,7 @@
 # Kanban Board With Authentication (JWT and bcrypt)
 ![App Image](./client/public/image.png)
 
-- [Link to app](https://kanban-jwt-marver.netlify.app)
+- [Link to app](https://authentication-kanbanboard.onrender.com)
 
 ## Description
 This project is a Kanban board application with JWT-based authentication. The authentication system is implemented with a class-based approach, providing essential methods to manage user sessions using JSON Web Tokens (JWTs).
