@@ -8,6 +8,7 @@ const Login = () => {
     username: '',
     password: ''
   });
+  const [ credentialsWrong, setCredentialsWrong ] = useState(false)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -22,8 +23,10 @@ const Login = () => {
     try {
       const data = await login(loginData);
       Auth.login(data.token);
+      setCredentialsWrong(false)
     } catch (err) {
       console.error('Failed to login', err);
+      setCredentialsWrong(true)
     }
   };
 
@@ -46,6 +49,7 @@ const Login = () => {
           onChange={handleChange}
         />
         <button type='submit'>Submit Form</button>
+        {credentialsWrong && <p style={{color: 'red', fontWeight: 'bold'}}>Wrong Crendentials!</p>}
       </form>
     </div>
     
